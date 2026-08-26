@@ -1,0 +1,10 @@
+/target
+*.so
+*.dylib
+*.dll
+*.pyd
+*.whl
+.vector/
+__pycache__/
+*.rs.bk
+Cargo.lock
