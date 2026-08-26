@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WC_AWF Basic Canvas</title>
+    <style>
+        body { margin: 0; background-color: #0c0c0c; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        canvas { border: 1px solid #00ff66; background-color: #000; }
+    </style>
+</head>
+<body>
+    <canvas id="wc-canvas" width="1280" height="720"></canvas>
+    <script type="module">
+        import init from './pkg/basic_canvas.js';
+        async function run() {
+            await init();
+        }
+        run();
+    </script>
+</body>
+</html>

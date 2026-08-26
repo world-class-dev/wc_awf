@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WC_AWF Enterprise Secure Dashboard</title>
+    <style>
+        body { margin: 0; background: #080808; overflow: hidden; }
+        #dashboard-canvas { width: 100vw; height: 100vh; display: block; }
+    </style>
+</head>
+<body>
+    <canvas id="dashboard-canvas"></canvas>
+    <script type="module">
+        import init from './pkg/secure_dashboard.js';
+        async function run() {
+            await init();
+        }
+        run();
+    </script>
+</body>
+</html>
