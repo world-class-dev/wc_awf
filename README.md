@@ -1,4 +1,4 @@
-# WC_AWF (Autonomous Web Assembly Framework)
+# WC_AWF (World Class Autonomous Web Assembly Framework)
 
 [![Crates.io](https://img.shields.io/badge/crates.io-v0.1.0-orange)](https://crates.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
