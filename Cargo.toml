@@ -12,6 +12,12 @@ exclude = [
     "tests/",
     "docs/",
 ]
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "render_benchmark"
+harness = false
 
 [lib]
 crate-type = ["cdylib", "rlib"]
