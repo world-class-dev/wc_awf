@@ -1,6 +1,6 @@
 [package]
-name = "wc_awf" 
-version = "0.1.0"
+name = "wc_awf" # World class a- web Frame
+version = "0.1.1"
 edition = "2021"
 authors = ["world-class-dev support@worldclass-ai.com"]
 description = "Autonomous Cross-Platform Engine for Android, iOS, Desktop & WebAssembly"

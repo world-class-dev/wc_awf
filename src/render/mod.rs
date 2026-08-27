@@ -3,7 +3,9 @@ pub mod native_gpu;
 pub mod ui;
 pub mod webgl;
 
-use crate::Color;
+// Re-export zana kuu ili zionekane nje
+pub use canvas::CanvasDriver;
+pub use crate::Color;
 
 #[derive(Clone, Debug, PartialEq)]
 pub enum VectorShape {
