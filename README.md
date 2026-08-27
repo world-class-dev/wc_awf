@@ -29,7 +29,7 @@
 ---
 ## 🏗 System Architecture
 
-```mermaid
+mermaid
 graph TD
     UserApp[User Application Code] --> EngineAPI[wc_awf Engine API]
     EngineAPI --> Alloc[Linear Memory Allocator]
