@@ -6,6 +6,12 @@ authors = ["world-class-dev support@worldclass-ai.com"]
 description = "Autonomous Cross-Platform Engine for Android, iOS, Desktop & WebAssembly"
 repository = "https://github.com/world-class-dev/wc_awf"
 license = "MIT"
+exclude = [
+    "target/",
+    ".vscode/",
+    "tests/",
+    "docs/",
+]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
