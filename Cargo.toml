@@ -33,7 +33,7 @@ js-sys = { version = "0.3", optional = true }
 version = "0.3"
 optional = true
 features = [
-  "console"
+  "console",
   "Window",
   "Document",
   "Element",
