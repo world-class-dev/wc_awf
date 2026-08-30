@@ -1,8 +1,8 @@
 use crate::render::VectorShape;
 
-#[cfg(target_arch = "wasm32")]
+#[cfg(feature = "wasm")]
 use wasm_bindgen::JsCast;
-#[cfg(target_arch = "wasm32")]
+#[cfg(feature = "wasm")]
 use web_sys::{window, CanvasRenderingContext2d, HtmlCanvasElement};
 
 pub struct CanvasDriver {
@@ -16,7 +16,7 @@ impl CanvasDriver {
         }
     }
 
-    #[cfg(target_arch = "wasm32")]
+    #[cfg(feature = "wasm")]
     pub fn render(&self, shapes: &[VectorShape]) {
         let win = match window() {
             Some(w) => w,
@@ -87,11 +87,11 @@ impl CanvasDriver {
         }
     }
 
-    #[cfg(not(target_arch = "wasm32"))]
+    #[cfg(not(feature = "wasm"))]
     pub fn render(&self, shapes: &[VectorShape]) {
-        // Native Surface / Headless Fallback Execution Engine
+        // Native / Headless Engine Fallback
         println!(
-            "[WC_AWF ENGINE]: Rendering {} vector shape(s) to Native Surface context: '{}'",
+            "[WC_AWF ENGINE]: Rendering {} vector shape(s) on target '{}'",
             shapes.len(),
             self.canvas_id
         );
