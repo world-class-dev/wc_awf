@@ -24,8 +24,8 @@ harness = false
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-# 1. Weka wasm-bindgen mara moja tu kama optional
 wasm-bindgen = { version = "0.2", optional = true }
+console_error_panic_hook = { version = "0.1.7", optional = true }
 pyo3 = { version = "0.20", features = ["extension-module", "abi3-py38"], optional = true }
 js-sys = { version = "0.3", optional = true }
 
@@ -50,5 +50,4 @@ features = [
 [features]
 default = []
 python-binding = ["dep:pyo3"]
-# 2. Washa wasm-bindgen, js-sys na web-sys wakati feature ya "wasm" inapotumiwa
-wasm = ["dep:wasm-bindgen", "dep:js-sys", "dep:web-sys"]
+wasm = ["dep:wasm-bindgen", "dep:js-sys", "dep:web-sys", "dep:console_error_panic_hook"]

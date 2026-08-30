@@ -83,13 +83,14 @@ impl CanvasDriver {
                     ctx.set_font(&format!("{}px sans-serif", size));
                     let _ = ctx.fill_text(body, *x as f64, *y as f64);
                 }
+                // Catch-all wildcard kushughulikia Line, Image, CandleStick na variants nyingine
+                _ => {}
             }
         }
     }
 
     #[cfg(not(feature = "wasm"))]
     pub fn render(&self, shapes: &[VectorShape]) {
-        // Native / Headless Engine Fallback
         println!(
             "[WC_AWF ENGINE]: Rendering {} vector shape(s) on target '{}'",
             shapes.len(),
