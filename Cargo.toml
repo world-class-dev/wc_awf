@@ -1,9 +1,9 @@
 [package]
-name = "wc_awf" # World class a- web Frame
-version = "0.1.1"
+name = "wc_awf" # World class ai web Frame
+version = "0.1.2"
 edition = "2021"
 authors = ["world-class-dev support@worldclass-ai.com"]
-description = "Autonomous Cross-Platform Engine for Android, iOS, Desktop & WebAssembly"
+description = "World Class Autonomous Cross-Platform Engine for Android, iOS, Desktop & WebAssembly"
 repository = "https://github.com/world-class-dev/wc_awf"
 license = "MIT"
 exclude = [
@@ -12,6 +12,7 @@ exclude = [
     "tests/",
     "docs/",
 ]
+
 [dev-dependencies]
 criterion = "0.5"
 
@@ -23,25 +24,30 @@ harness = false
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+# 1. Weka wasm-bindgen mara moja tu kama optional
 wasm-bindgen = { version = "0.2", optional = true }
 pyo3 = { version = "0.20", features = ["extension-module", "abi3-py38"], optional = true }
+js-sys = { version = "0.3", optional = true }
 
-web-sys = { version = "0.3", features = [
-    "Window",
-    "Document",
-    "Element",
-    "HtmlCanvasElement",
-    "CanvasRenderingContext2d"
-] }
+[dependencies.web-sys]
+version = "0.3"
+optional = true
+features = [
+  "Window",
+  "Document",
+  "Element",
+  "HtmlCanvasElement",
+  "WebGlRenderingContext",
+  "CanvasRenderingContext2d",
+  "MouseEvent",
+  "TouchEvent",
+  "Touch",
+  "TouchList",
+  "Performance",
+]
 
 [features]
 default = []
 python-binding = ["dep:pyo3"]
-wasm = ["dep:wasm-bindgen"]
-
-[target.'cfg(target_arch = "wasm32")'.dependencies]
-wasm-bindgen = "0.2"
-web-sys = { version = "0.3", features = [
-    "Window", "Document", "Element", "HtmlCanvasElement", 
-    "CanvasRenderingContext2d", "WebGlRenderingContext"
-] }
+# 2. Washa wasm-bindgen, js-sys na web-sys wakati feature ya "wasm" inapotumiwa
+wasm = ["dep:wasm-bindgen", "dep:js-sys", "dep:web-sys"]
