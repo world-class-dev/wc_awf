@@ -1,6 +1,7 @@
+
+pub use crate::render::ui::UiEngine;
+
 use crate::core::memory::LinearMemoryBuffer;
-use crate::render::ui::UiEngine;
-// remove: use crate::render::VectorShape;
 
 pub struct WcEngine {
     pub title: String,
@@ -43,7 +44,11 @@ impl WcEngine {
             format!("[wc_awf::core] WASM Engine Active: {}", self.title)
         }
 
-        #[cfg(all(not(target_arch = "wasm32"), not(target_os = "android"), not(target_os = "ios")))]
+        #[cfg(all(
+            not(target_arch = "wasm32"),
+            not(target_os = "android"),
+            not(target_os = "ios")
+        ))]
         {
             format!("[wc_awf::core] Desktop Binary Active: {}", self.title)
         }
@@ -58,3 +63,6 @@ impl WcEngine {
         self.ui.render_queue.len()
     }
 }
+
+// Alias of stop error E0432 on the `src/lib.rs` na `src/wasm.rs`
+pub type Engine = WcEngine;
