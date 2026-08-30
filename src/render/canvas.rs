@@ -1,6 +1,8 @@
+#![cfg(feature = "wasm")]
+
 use crate::render::VectorShape;
-use web_sys::wasm_bindgen::JsCast;
-use web_sys::{window, CanvasRenderingContext2d, HtmlCanvasElement};
+//use web_sys::wasm_bindgen::JsCast;
+//use web_sys::{window, CanvasRenderingContext2d, HtmlCanvasElement};
 
 pub struct CanvasDriver {
     pub canvas_id: String,
@@ -22,7 +24,7 @@ impl CanvasDriver {
                             if let Ok(ctx) = context_obj.dyn_into::<CanvasRenderingContext2d>() {
                                 for shape in shapes {
                                     match shape {
-                                        VectorShape::Rectangle { x, y, w, h, color } => {
+                                        VectorShape::Rectangle { x, y, w, h, color, border_radius: _ } => {
                                             let fill_style = format!(
                                                 "rgba({},{},{},{})",
                                                 color.r, color.g, color.b, color.a
