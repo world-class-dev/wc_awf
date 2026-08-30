@@ -1,8 +1,8 @@
 #![cfg(feature = "wasm")]
 
 use crate::render::VectorShape;
-//use web_sys::wasm_bindgen::JsCast;
-//use web_sys::{window, CanvasRenderingContext2d, HtmlCanvasElement};
+use web_sys::wasm_bindgen::JsCast;
+use web_sys::{window, CanvasRenderingContext2d, HtmlCanvasElement};
 
 pub struct CanvasDriver {
     pub canvas_id: String,
